@@ -16,8 +16,11 @@ export class ProfileSearchResultsPage {
   constructor(private navCtrl: NavController,private GithubService: GithubServiceProvider, private navParams: NavParams) {
   }
   getUserInformation():void{
-    this.GithubService.mockGetUserInformation(this.username).subscribe((data: User) => this.user=data);
-    this.GithubService.mockGetRepositoryInformation(this.username).subscribe((data:Repository[]) => this.repositories=data);
+
+    this.GithubService.getUserInformation(this.username).subscribe((data: User) => this.user = data);
+    this.GithubService.getRepositoryInformation(this.username).subscribe((data:Repository[]) => this.repositories = data);
+    // this.GithubService.mockGetUserInformation(this.username).subscribe((data: User) => this.user=data);
+    // this.GithubService.mockGetRepositoryInformation(this.username).subscribe((data:Repository[]) => this.repositories=data);
   }
   ionViewWillLoad() {
   

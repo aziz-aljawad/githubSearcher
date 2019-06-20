@@ -1,3 +1,4 @@
+import { HttpClientModule,HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -6,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { GithubServiceProvider } from '../providers/github-service/github-service';
-
+import {  } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -15,8 +16,8 @@ import { GithubServiceProvider } from '../providers/github-service/github-servic
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp,
-      {autocomplete: 'on'})
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
